@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Space</title>
+    <!-- Google Fonts for Elegant Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Looping Text Header -->
+        <div class="quote-wrapper">
+            <div class="looping-quote" id="quote-element"></div>
+        </div>
+
+        <!-- Step 1: Opinion Box -->
+        <div class="step-view active" id="step-1">
+            <!-- Asynchronous Form Configuration -->
+            <form id="opinion-form" onsubmit="handleOpinionSubmit(event)">
+                <!-- Replace with your Web3Forms Access Key -->
+                <input type="hidden" name="access_key" value="eafab91b-4882-4f7f-9f91-616b65ab3830">
+                <!-- Hides subjects and thank-you pages from the provider system to ensure stealth execution -->
+                <input type="hidden" name="subject" value="New Opinion on Love Received!">
+                <input type="hidden" name="from_name" value="Love App Analytics">
+                
+                <label for="opinion-input">Give your opinion on love:</label>
+                <!-- Added name attribute so the backend recognizes the data field -->
+                <textarea id="opinion-input" name="user_opinion" placeholder="Share your thoughts..." required></textarea>
+                <button type="submit" id="submit-btn" class="btn">Submit Thoughts</button>
+            </form>
+        </div>
+
+        <!-- Step 2: The Truth Question -->
+        <div class="step-view" id="step-2">
+            <h2 class="question-heading">Do you love me or not?<br>Answer truly.</h2>
+            <div class="btn-group">
+                <button class="btn btn-choice" onclick="showFinalResult('yes')">Yes</button>
+                <button class="btn btn-choice btn-no" onclick="showFinalResult('no')">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fullscreen Overlays for Final Responses -->
+    <div class="fullscreen-popup" id="popup-yes">
+        <div class="popup-content">
+            mujhy pta tha 😍 <br> I love you too
+            <span class="emoji-big">❤️</span>
+        </div>
+    </div>
+
+    <div class="fullscreen-popup" id="popup-no">
+        <div class="popup-content" style="color: #555;">
+            yr aisa na karo please 😢
+            <span class="emoji-big">🥺</span>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
